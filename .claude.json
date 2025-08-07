@@ -1,0 +1,32 @@
+{
+  "mcp": [
+    {
+      "name": "context7",
+      "command": "npx",
+      "args": ["@context7/mcp-server"],
+      "disabled": false,
+      "description": "Context7 - Official library docs and patterns"
+    },
+    {
+      "name": "sequential",
+      "command": "npx",
+      "args": ["@sequential/mcp-server"],
+      "disabled": false,
+      "description": "Sequential - Complex multi-step thinking"
+    },
+    {
+      "name": "magic",
+      "command": "npx",
+      "args": ["@magic/mcp-server"],
+      "disabled": false,
+      "description": "Magic - Modern UI component generation"
+    },
+    {
+      "name": "playwright",
+      "command": "npx",
+      "args": ["@playwright/mcp-server"],
+      "disabled": false,
+      "description": "Playwright - Browser automation and testing"
+    }
+  ]
+}

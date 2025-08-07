@@ -1,0 +1,8 @@
+[project]
+name = "esgv1"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.13"
+dependencies = [
+    "superclaude>=3.0.0.2",
+]
