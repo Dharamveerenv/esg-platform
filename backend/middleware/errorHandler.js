@@ -4,6 +4,7 @@
  */
 
 const { AppError } = require('../utils/appError');
+const ResponseFormatter = require('../utils/responseFormatter');
 
 // Handle different types of database errors
 const handleCastErrorDB = (err) => {
@@ -33,15 +34,33 @@ const handleJWTExpiredError = () =>
 const sendErrorDev = (err, req, res) => {
   // For API requests
   if (req.originalUrl.startsWith('/api')) {
-    return res.status(err.statusCode).json({
-      status: err.status,
-      error: err,
-      message: err.message,
-      errorCode: err.errorCode,
-      details: err.details,
-      stack: err.stack,
-      timestamp: err.timestamp
-    });
+    const details = [];
+    
+    // Add validation errors if present
+    if (err.details && err.details.validationErrors) {
+      details.push(...err.details.validationErrors.map(e => ({
+        field: e,
+        code: 'VALIDATION_ERROR',
+        message: e
+      })));
+    }
+    
+    // Add stack trace in development
+    if (err.stack) {
+      details.push({
+        field: 'stack',
+        code: 'DEBUG_INFO',
+        message: err.stack
+      });
+    }
+    
+    return ResponseFormatter.error(
+      res,
+      err.message,
+      err.statusCode,
+      err.errorCode || 'UNKNOWN_ERROR',
+      details
+    );
   }
   
   // For non-API requests
@@ -58,23 +77,34 @@ const sendErrorProd = (err, req, res) => {
   if (req.originalUrl.startsWith('/api')) {
     // Operational, trusted error: send message to client
     if (err.isOperational) {
-      return res.status(err.statusCode).json({
-        status: err.status,
-        message: err.message,
-        errorCode: err.errorCode,
-        details: err.details,
-        timestamp: err.timestamp
-      });
+      const details = [];
+      
+      // Add validation errors if present (safe for production)
+      if (err.details && err.details.validationErrors) {
+        details.push(...err.details.validationErrors.map(e => ({
+          field: e,
+          code: 'VALIDATION_ERROR',
+          message: e
+        })));
+      }
+      
+      return ResponseFormatter.error(
+        res,
+        err.message,
+        err.statusCode,
+        err.errorCode,
+        details
+      );
     }
     
     // Programming or other unknown error: don't leak error details
     console.error('ERROR 💥', err);
-    return res.status(500).json({
-      status: 'error',
-      message: 'Something went wrong!',
-      errorCode: 'INTERNAL_SERVER_ERROR',
-      timestamp: new Date().toISOString()
-    });
+    return ResponseFormatter.error(
+      res,
+      'Something went wrong!',
+      500,
+      'INTERNAL_SERVER_ERROR'
+    );
   }
   
   // For non-API requests

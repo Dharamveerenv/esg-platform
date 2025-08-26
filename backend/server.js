@@ -16,14 +16,20 @@ const dotenv = require('dotenv');
 
 // Import routes
 const authRoutes = require('./routes/authRoutes');
+//const userRoutes = require('./routes/userRoutes');
 const companyRoutes = require('./routes/companyRoutes');
 const reportRoutes = require('./routes/reportRoutes');
+const fileRoutes = require('./routes/fileRoutes');
 const emissionFactorRoutes = require('./routes/emissionFactorRoutes');
 const referenceRoutes = require('./routes/referenceRoutes');
+const calculationRoutes = require('./routes/calculationRoutes');
+const b3Routes = require('./routes/b3Routes');
+const b3DevRoutes = require('./routes/b3DevRoutes');
 
-// Import error handling
-const AppError = require('./utils/appError');
+// Import middleware
+const { AppError } = require('./utils/appError');
 const globalErrorHandler = require('./middleware/errorHandler');
+const requestTracking = require('./middleware/requestTracking');
 
 // Load environment variables
 dotenv.config();
@@ -76,37 +82,48 @@ app.use(mongoSanitize()); // Against NoSQL query injection
 app.use(xss()); // Against XSS attacks
 app.use(hpp()); // Against parameter pollution
 
-// Request logging middleware
-app.use((req, res, next) => {
-  console.log(`${new Date().toISOString()} - ${req.method} ${req.path} - IP: ${req.ip}`);
-  next();
-});
+// Request tracking middleware (includes logging)
+app.use(requestTracking);
+
+// Import ResponseFormatter for health checks
+const ResponseFormatter = require('./utils/responseFormatter');
 
 // Health check endpoint
 app.get('/health', (req, res) => {
-  res.status(200).json({
-    status: 'success',
-    message: 'VSME ESG Platform API is healthy',
+  const healthData = {
+    service: 'VSME ESG Platform API',
+    environment: process.env.NODE_ENV || 'development',
+    uptime: process.uptime(),
     timestamp: new Date().toISOString(),
-    environment: process.env.NODE_ENV || 'development'
-  });
+    version: '1.0.0'
+  };
+  
+  return ResponseFormatter.success(res, healthData, 'Service is healthy');
 });
 
 app.get('/api/health', (req, res) => {
-  res.status(200).json({
-    status: 'success',
-    message: 'VSME ESG Platform API is healthy',
+  const healthData = {
+    service: 'VSME ESG Platform API',
+    environment: process.env.NODE_ENV || 'development',
+    uptime: process.uptime(),
     timestamp: new Date().toISOString(),
-    environment: process.env.NODE_ENV || 'development'
-  });
+    version: '1.0.0'
+  };
+  
+  return ResponseFormatter.success(res, healthData, 'API is healthy');
 });
 
-// API routes
+// API routes 
 app.use('/api/auth', authRoutes);
+//app.use('/api/users', userRoutes);
 app.use('/api/companies', companyRoutes);
 app.use('/api/reports', reportRoutes);
+app.use('/api/files', fileRoutes);
 app.use('/api/emission-factors', emissionFactorRoutes);
 app.use('/api/reference', referenceRoutes);
+app.use('/api/calculations', calculationRoutes);
+app.use('/api/reports', b3Routes);
+app.use('/api/dev/b3', b3DevRoutes);
 
 // Handle undefined routes
 app.all('*', (req, res, next) => {

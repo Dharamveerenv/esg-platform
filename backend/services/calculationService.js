@@ -4,12 +4,13 @@
  */
 
 const EmissionFactor = require('../models/EmissionFactor');
-const AppError = require('../utils/appError');
+const { AppError } = require('../utils/appError');
 
 class CalculationService {
   
   /**
    * Calculate Scope 1 emissions (Stationary Combustion)
+   * Enhanced with Excel-based formulas from "Full Scope 1_2 Activity Data_Emission Factors V.0.xlsx"
    * @param {Array} fuelData - Array of fuel consumption data
    * @param {String} country - Country for emission factors (default: Ireland)
    * @returns {Object} Calculation results
@@ -24,50 +25,87 @@ class CalculationService {
         throw new AppError('Invalid fuel data: fuelType and positive quantity required', 400);
       }
       
-      // Get emission factor from database
-      const emissionFactor = await EmissionFactor.findCurrent(
-        'Scope1',
-        fuel.fuelType,
-        country
-      );
+      // Get emission factor from database with fallback
+      let emissionFactor = await EmissionFactor.findOne({
+        'factorMetadata.category': 'Scope1',
+        'factorMetadata.subCategory': 'Stationary',
+        'fuelSpecifications.fuelType': fuel.fuelType,
+        'geographicScope.country': country,
+        isActive: true
+      }).sort({ 'factorMetadata.validFrom': -1 });
+      
+      // Fallback: try to find any factor for this fuel type if country-specific not found
+      if (!emissionFactor) {
+        emissionFactor = await EmissionFactor.findOne({
+          'factorMetadata.category': 'Scope1',
+          'factorMetadata.subCategory': 'Stationary',
+          'fuelSpecifications.fuelType': fuel.fuelType,
+          isActive: true
+        }).sort({ 'factorMetadata.validFrom': -1 });
+      }
       
       if (!emissionFactor) {
         throw new AppError(`Emission factor not found for ${fuel.fuelType} in ${country}`, 404);
       }
       
-      // Calculate emissions
-      const emissions = emissionFactor.calculateEmissions(fuel.quantity, fuel.unit);
+      // Excel-based calculations following spreadsheet formulas
+      // Formula: Activity Data × CO2 Factor = CO2 Emissions
+      const co2Emissions = fuel.quantity * emissionFactor.emissionFactorData.co2Factor;
+      
+      // Formula: Activity Data × CH4 Factor × GWP(CH4) = CH4 CO2e Emissions
+      const ch4Emissions = fuel.quantity * emissionFactor.emissionFactorData.ch4Factor * 25;
+      
+      // Formula: Activity Data × N2O Factor × GWP(N2O) = N2O CO2e Emissions  
+      const n2oEmissions = fuel.quantity * emissionFactor.emissionFactorData.n2oFactor * 298;
+      
+      // Formula: CO2 + CH4(CO2e) + N2O(CO2e) = Total CO2e Emissions
+      const totalCo2eEmissions = co2Emissions + ch4Emissions + n2oEmissions;
       
       const calculation = {
+        // Activity Data (Excel columns A-F)
         fuelType: fuel.fuelType,
         consumption: fuel.quantity,
         unit: fuel.unit || emissionFactor.emissionFactorData.unit,
-        emissionFactor: emissionFactor.emissionFactorData.totalCo2eFactor,
-        co2Emissions: emissions.co2Emissions,
-        ch4Emissions: emissions.ch4Emissions,
-        n2oEmissions: emissions.n2oEmissions,
-        totalCo2eEmissions: emissions.totalCo2eEmissions,
+        sourceCategory: fuel.sourceCategory || 'Stationary Combustion',
+        facilityName: fuel.facilityName || 'Facility',
+        
+        // Emission Factors (Excel columns G-L)
+        emissionFactors: {
+          co2Factor: emissionFactor.emissionFactorData.co2Factor,
+          ch4Factor: emissionFactor.emissionFactorData.ch4Factor,
+          n2oFactor: emissionFactor.emissionFactorData.n2oFactor,
+          totalCo2eFactor: emissionFactor.emissionFactorData.totalCo2eFactor
+        },
+        
+        // Calculation Results (Excel columns M-R)
+        co2Emissions: Math.round(co2Emissions * 100) / 100,
+        ch4Emissions: Math.round(ch4Emissions * 100000) / 100000, // Higher precision for small values
+        n2oEmissions: Math.round(n2oEmissions * 100000) / 100000, // Higher precision for small values
+        totalCo2eEmissions: Math.round(totalCo2eEmissions * 100) / 100,
+        
+        // Metadata
         calculationDate: new Date(),
         factorSource: emissionFactor.factorMetadata.source,
         factorVersion: emissionFactor.factorMetadata.version,
         uncertainty: emissionFactor.emissionFactorData.uncertainty,
-        methodology: 'IPCC Tier 1 approach with country-specific factors'
+        methodology: 'Excel-based IPCC Tier 1 with AR5 GWP values'
       };
       
       results.push(calculation);
-      totalCo2e += emissions.totalCo2eEmissions;
+      totalCo2e += totalCo2eEmissions;
     }
     
     return {
       calculations: results,
-      totalCo2e: Math.round(totalCo2e * 100) / 100, // Round to 2 decimal places
-      methodology: 'IPCC Tier 1 approach with country-specific factors',
+      totalCo2e: Math.round(totalCo2e * 100) / 100,
+      methodology: 'Excel-based IPCC Tier 1 with AR5 GWP values',
       calculatedAt: new Date()
     };
   }
   
   /**
-   * Calculate Scope 1 emissions (Mobile Combustion)
+   * Calculate Scope 1 emissions (Mobile Combustion) 
+   * Enhanced with Excel-based formulas from spreadsheet
    * @param {Array} vehicleData - Array of vehicle fuel consumption data
    * @param {String} country - Country for emission factors
    * @returns {Object} Calculation results
@@ -80,12 +118,22 @@ class CalculationService {
       let calculation;
       
       if (vehicle.calculationMethod === 'fuel-based') {
-        // Fuel-based calculation
-        const emissionFactor = await EmissionFactor.findCurrent(
-          'Scope1',
-          vehicle.fuelType,
-          country
-        );
+        // Fuel-based calculation with fallback
+        let emissionFactor = await EmissionFactor.findOne({
+          'factorMetadata.category': 'Scope1',
+          'factorMetadata.subCategory': 'Mobile',
+          'fuelSpecifications.fuelType': vehicle.fuelType,
+          'geographicScope.country': country,
+          isActive: true
+        }).sort({ 'factorMetadata.validFrom': -1 });
+        
+        if (!emissionFactor) {
+          emissionFactor = await EmissionFactor.findOne({
+            'factorMetadata.category': 'Scope1',
+            'fuelSpecifications.fuelType': vehicle.fuelType,
+            isActive: true
+          }).sort({ 'factorMetadata.validFrom': -1 });
+        }
         
         if (!emissionFactor) {
           throw new AppError(`Emission factor not found for ${vehicle.fuelType} in ${country}`, 404);
@@ -215,12 +263,21 @@ class CalculationService {
         throw new AppError('Invalid electricity data: country and positive quantity required', 400);
       }
       
-      // Get grid emission factor
-      const gridFactor = await EmissionFactor.findCurrent(
-        'Scope2',
-        'Electricity',
-        consumption.country
-      );
+      // Get grid emission factor with fallback
+      let gridFactor = await EmissionFactor.findOne({
+        'factorMetadata.category': 'Scope2',
+        'fuelSpecifications.fuelType': 'Electricity',
+        'geographicScope.country': consumption.country,
+        isActive: true
+      }).sort({ 'factorMetadata.validFrom': -1 });
+      
+      if (!gridFactor) {
+        gridFactor = await EmissionFactor.findOne({
+          'factorMetadata.category': 'Scope2',
+          'fuelSpecifications.fuelType': 'Electricity',
+          isActive: true
+        }).sort({ 'factorMetadata.validFrom': -1 });
+      }
       
       if (!gridFactor) {
         throw new AppError(`Grid emission factor not found for ${consumption.country}`, 404);

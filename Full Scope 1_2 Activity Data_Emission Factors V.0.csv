@@ -1,0 +1,512 @@
+Scope 1,,,,
+,,,,
+Mobile Combustion,,,,
+Fuel,Emission Factor,Unit,Activity Unit,Source
+Diesel (Ireland),2.67,kg CO₂e/litre,litre,SEAI Emission Factors
+Petrol (Ireland),2.31,kg CO₂e/litre,litre,SEAI Emission Factors
+CNG,2575.46441,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+,0.45070,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.20270,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+,0.18296,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+Diesel (average biofuel blend),3087.94462,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+,2.57082,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.25953,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+,0.24411,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+Diesel (100% mineral diesel),3203.91143,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+,2.66155,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.26808,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+,0.25199,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+Petrol (average biofuel blend),2772.97935,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+,2.06916,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.23181,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+,0.21956,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+Petrol (100% mineral petrol),3154.08213,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+,2.33984,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.25431,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+,0.24159,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+Aviation spirit,3193.69480,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+,2.33116,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.25666,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+,0.24382,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+Aviation turbine fuel,3178.36520,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+,2.54269,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.26061,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+,0.24758,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+,,,,
+Bioethanol,0.00901,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.42339,kg CO₂e/GJ,GJ,UK Gov GHG Conversion Factors 2025
+,0.01135,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Biodiesel ME,0.16751,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,5.05961,kg CO₂e/GJ,GJ,UK Gov GHG Conversion Factors 2025
+,0.18822,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Biomethane (compressed),n/a,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.10625,kg CO₂e/GJ,GJ,UK Gov GHG Conversion Factors 2025
+,0.00521,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Biodiesel ME (from used cooking oil),0.16751,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,5.05961,kg CO₂e/GJ,GJ,UK Gov GHG Conversion Factors 2025
+,0.18822,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Biodiesel ME (from tallow),0.16751,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,5.05961,kg CO₂e/GJ,GJ,UK Gov GHG Conversion Factors 2025
+,0.18822,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Biodiesel HVO,0.03558,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,1.03677,kg CO₂e/GJ,GJ,UK Gov GHG Conversion Factors 2025
+,0.04562,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Biopropane,0.00213,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.08952,kg CO₂e/GJ,GJ,UK Gov GHG Conversion Factors 2025
+,0.00415,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Development diesel,0.03705,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,1.03677,kg CO₂e/GJ,GJ,UK Gov GHG Conversion Factors 2025
+,0.04461,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Development petrol,0.01402,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.42339,kg CO₂e/GJ,GJ,UK Gov GHG Conversion Factors 2025
+,0.01890,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Off road biodiesel,0.16751,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,5.05961,kg CO₂e/GJ,GJ,UK Gov GHG Conversion Factors 2025
+,0.18822,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Biomethane (liquified),n/a,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.10625,kg CO₂e/GJ,GJ,UK Gov GHG Conversion Factors 2025
+,0.00521,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Methanol (bio),0.00669,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.42339,kg CO₂e/GJ,GJ,UK Gov GHG Conversion Factors 2025
+,0.00844,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Avtur (renewable),0.02531,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.72340,kg CO₂e/GJ,GJ,UK Gov GHG Conversion Factors 2025
+,0.03179,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+,,,,
+,,,,
+Delivery Vehicles,Emission Factor,Unit,Activity Unit,Source
+Van Class I (up to 1.305 tonnes) diesel,0.15738,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,0.25329,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+Van Class I (up to 1.305 tonnes) petrol,0.20188,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,0.32490,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+Van Class I (up to 1.305 tonnes) BEV,0.000000,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,0.000000,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+Van Class II (1.305-1.74  tonnes) diesel,0.19260,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,0.30996,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+Van Class II (1.305-1.74  tonnes) petrol,0.20874,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,0.33594,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+Van Class II (1.305-1.74  tonnes) BEV,0.000000,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,0.000000,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+Van Class III (1.74-3.5  tonnes) diesel,0.27878,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,0.44866,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+Van Class III (1.74-3.5  tonnes) petrol,0.33845,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,0.54468,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+Van Class III (1.74-3.5  tonnes) BEV,0.000000,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,0.000000,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+Van -  Average (up to 3.5 tonnes) diesel,0.25561,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,0.41138,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+Van -  Average (up to 3.5 tonnes) petrol,0.21335,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,0.34336,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+Van -  Average (up to 3.5 tonnes) BEV,0.000000,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,0.000000,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+,,,,
+HGV Rigid (>3.5 - 7.5 tonnes) - Ave laden,0.49548,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,0.79738,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+HGV Rigid ( 7.5-17 tonnes) - Ave laden,0.60501,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,0.97367,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+HGV Rigid (>17 tonnes) - Ave laden,0.99156,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,1.59575,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+Ave Rigid - Ave laden,0.83751,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,1.34783,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+HGV Articulated (>3.5 - 33t) - Ave laden,0.77250,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,1.24322,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+HGV Articulated (>3.5 - 33t) - Ave laden,0.91969,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,1.48010,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+Ave Articulated - Ave laden,0.92854,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,1.49432,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+Average HGV Ave laden,0.87910,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,1.41477,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+,,,,
+HGV Refrigerated Rigid (>3.5 - 7.5 tonnes) - Ave laden,0.59005,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,0.94959,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+HGV Refrigerated  Rigid ( 7.5-17 tonnes) - Ave laden,0.72049,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,1.15952,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+HGV Refrigerated Rigid (>17 tonnes) - Ave laden,1.18083,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,1.90036,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+Ave Refrigerated Rigid - Ave laden,0.99739,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,1.60513,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+HGV Refrigerated  Articulated (>3.5 - 33t) - Ave laden,0.90759,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,1.46061,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+HGV Refrigerated Articulated (>3.5 - 33t) - Ave laden,1.08051,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,1.73890,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+Ave Refrigerated Articulated - Ave laden,1.07395,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,1.72834,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+Average Refrigerated HGV Ave laden,1.04323,kg CO₂e/km,km,UK Gov GHG Conversion Factors 2025
+,1.67891,kg CO₂e/mile,mile ,UK Gov GHG Conversion Factors 2025
+,,,,
+Stationary Combustion,,,,
+Fuel,Emission Factor,Unit,Activity Unit,Source
+Fuel Oil (Ireland),2.67,kg CO₂e/litre,Litre,SEAI Emission Factors
+Natural Gas (Ireland),2.02,kg CO₂e/m3,m3,SEAI Emission Factors
+Coal (Ireland),2.63,kg CO₂e/kg,kg,SEAI Emission Factors
+Sod Peat (Ireland),1.36,kg CO₂e/kg,kg,SEAI Emission Factors
+Bituminouis coal,2.634,kg CO₂e/kg,kg,SEAI Emission Factors
+Anthracite,2.737,kg CO₂e/kg,kg,SEAI Emission Factors
+Lignite (Ireland),0.741,kg CO₂e/kg,kg,SEAI Emission Factors
+Milled peat (Ireland),1.363,kg CO₂e/kg,kg,SEAI Emission Factors
+Peat briquettes (Ireland),1.834,kg CO₂e/kg,kg,SEAI Emission Factors
+,,,,
+Butane,3033.38067,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+Butane,1.74533,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+Butane,0.24107,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+Butane,0.22241,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+CNG,2575.46441,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+,0.45070,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.20270,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+,0.18296,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+LNG,2603.30441,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+,1.17797,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.20489,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+,0.18494,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+LPG,2939.36095,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+,1.55713,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.23032,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+,0.21450,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+Natural gas,2575.46441,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+,2.06672,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.20270,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+,0.18296,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+Natural gas (100% mineral blend),2603.30441,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+,2.08906,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.20489,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+,0.18494,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+Other petroleum gas,2578.24647,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+,0.94442,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.19917,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+,0.18323,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+Propane,2997.63233,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+Propane,1.54358,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+Propane,0.23258,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+Propane,0.21410,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+Burning oil,3165.04181,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+,2.54016,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.25975,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+,0.24677,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+Fuel oil,3228.89019,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+,3.17492,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.28523,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+,0.26813,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+Gas oil,3226.57859,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+,2.75541,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.27288,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+,0.25650,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+Lubricants,3180.99992,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+Lubricants,2.74934,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+Lubricants,0.28100,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+Lubricants,0.26414,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+Naphtha,3142.37890,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+Naphtha,2.11894,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+Naphtha,0.24891,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+Naphtha,0.23647,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+Processed fuel oils - residual oil,3228.89019,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+,3.17492,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.28523,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+,0.26813,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+Processed fuel oils - distillate oil,3226.57859,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+,2.75541,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.27288,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+,0.25650,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+Refinery miscellaneous,2944.32093,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+,n/a,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.25961,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+,0.24663,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+Waste oils,3219.37916,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+Waste oils,2.74924,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+Waste oils,0.27459,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+Waste oils,0.25641,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+Marine gas oil,3245.30441,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+,2.77139,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.27445,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+,0.25798,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+Marine fuel oil,3154.75334,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+,3.10202,kg CO₂e/litre,litre,UK Gov GHG Conversion Factors 2025
+,0.27869,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+,0.26197,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+Coal (industrial),2395.28994,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+,0.33944,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+,0.32246,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+Coal (domestic),2904.95234,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+,0.36549,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+,0.34721,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+Coking coal,3164.65002,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+,0.37675,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+,0.35790,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+Petroleum coke,3386.57168,kg CO₂e/tonne,tonne,UK Gov GHG Conversion Factors 2025
+,0.35887,kg CO₂e/kWh (gross CV),kWh (gross CV),UK Gov GHG Conversion Factors 2025
+,0.34092,kg CO₂e/kWh (net CV),kWh (net CV),UK Gov GHG Conversion Factors 2025
+,,,,
+Wood logs,46.98508,kg CO₂e/tonne,tonnes,UK Gov GHG Conversion Factors 2025
+,0.01150,kg CO₂e/kWh ,kWh,UK Gov GHG Conversion Factors 2025
+Wood chips,43.43964,kg CO₂e/tonne,tonnes,UK Gov GHG Conversion Factors 2025
+,0.01150,kg CO₂e/kWh ,kWh,UK Gov GHG Conversion Factors 2025
+Wood pellets,55.19389,kg CO₂e/tonne,tonnes,UK Gov GHG Conversion Factors 2025
+,0.01150,kg CO₂e/kWh ,kWh,UK Gov GHG Conversion Factors 2025
+Grass/straw,47.35709,kg CO₂e/tonne,tonnes,UK Gov GHG Conversion Factors 2025
+,0.01273,kg CO₂e/kWh ,kWh,UK Gov GHG Conversion Factors 2025
+,,,,
+Biogas,1.24314,kg CO₂e/tonne,tonnes,UK Gov GHG Conversion Factors 2025
+,0.00022,kg CO₂e/kWh ,kWh,UK Gov GHG Conversion Factors 2025
+Landfill gas,0.69696,kg CO₂e/tonne,tonnes,UK Gov GHG Conversion Factors 2025
+,0.00020,kg CO₂e/kWh ,kWh,UK Gov GHG Conversion Factors 2025
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+Fugitive Emissions,,,,
+Refrigant/Gas,Emisson Factor (Inc. Non Kyoto Products),Unit,Activity Unit,Source
+Carbon dioxide,1.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Methane,28.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Nitrous oxide,265.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFC-23,12400.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFC-32,677.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFC-41,116.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFC-125,3170.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFC-134,1120.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFC-134a,1300.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFC-143,328.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFC-143a,4800.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFC-152a,138.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFC-227ea,3350.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFC-236fa,8060.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFC-245fa,858.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFC-43-I0mee,1650.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Perfluoromethane (PFC-14),6630.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Perfluoroethane (PFC-116),11100.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Perfluoropropane (PFC-218),8900.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Perfluorocyclobutane (PFC-318),9540.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Perfluorobutane (PFC-3-1-10),9200.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Perfluoropentane (PFC-4-1-12),8550.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Perfluorohexane (PFC-5-1-14),7910.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+PFC-9-1-18,7190.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Perfluorocyclopropane,9200.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Sulphur hexafluoride (SF6),23500.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFC-152,16.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFC-161,4.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFC-236cb,1210.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFC-236ea,1330.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFC-245ca,716.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFC-365mfc,804.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Nitrogen trifluoride,16100.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R401A,1130.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R401B,1236.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R401C,876.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R402A,2571.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R402B,2261.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R403A,3100.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R403B,4457.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R404A,3943.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R405A,4821.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R406A,1780.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R407A,1923.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R407B,2547.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R407C,1624.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R407D,1487.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R407E,1425.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R407F,1674.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R408A,3257.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R409A,1485.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R409B,1474.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R410A,1924.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R410B,2048.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R411A,1555.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R411B,1659.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R412A,2172.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R413A,1945.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R414A,1375.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R414B,1274.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R415A,1468.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R415B,544.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R416A,975.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R417A,2127.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R417B,2742.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R417C,1643.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R418A,1693.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R419A,2688.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R419B,2161.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R420A,1382.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R421A,2385.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R421B,2890.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R422A,2847.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R422B,2290.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R422C,2794.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R422D,2473.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R422E,2350.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R423A,2274.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R424A,2212.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R425A,1431.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R426A,1371.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R427A,2024.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R428A,3417.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R429A,15.30000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R430A,106.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R431A,40.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R432A,1.80000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R433A,0.64000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R433B,0.16000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R433C,0.55000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R434A,3076.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R435A,28.40000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R436A,1.35000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R436B,1.47000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R437A,1639.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R438A,2059.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R439A,1828.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R440A,156.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R441A,0.23000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R442A,1754.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R443A,1.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R444A,89.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R445A,118.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R500,7564.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R501,3870.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R502,4786.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R503,13299.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R504,4299.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R505,7956.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R506,3857.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R507A,3985.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R508A,11607.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R508B,11698.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R509A,5758.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R510A,1.24000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R511A,7.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R512A,196.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+,,,,
+CFC-11/R11 = trichlorofluoromethane,4660.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+CFC-12/R12 = dichlorodifluoromethane,10200.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+CFC-13,13900.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+CFC-113,5820.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+CFC-114,8590.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+CFC-115,7670.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Halon-1211,1750.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Halon-1301,6290.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Halon-2402,1470.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Carbon tetrachloride,1730.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Methyl bromide,2.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Methyl chloroform,160.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HCFC-22/R22 = chlorodifluoromethane,1760.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HCFC-123,79.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HCFC-124,527.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HCFC-141b,782.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HCFC-142b,1980.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HCFC-225ca,127.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HCFC-225cb,525.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HCFC-21,148.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+,,,,
+HFE-125,12400.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFE-134,5560.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFE-143a,523.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HCFE-235da2,491.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFE-245cb2,654.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFE-245fa2,812.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFE-254cb2,301.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFE-347mcc3,530.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFE-347pcf2,889.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFE-356pcc3,413.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFE-449sl (HFE-7100),421.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFE-569sf2 (HFE-7200),57.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFE-43-10pccc124 (H-Galden1040x),2820.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFE-236ca12 (HG-10),5350.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+HFE-338pcc13 (HG-01),2910.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+,,,,
+Trifluoromethyl sulphur pentafluoride,17400.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+PFPMIE,9710.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Dimethylether,1.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Methylene chloride,9.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+Methyl chloride,12.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R290 = propane,0.06000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R600A = isobutane,3.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R600 = butane,0.00600,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R601 = n-pentane,5.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R601A = isopentane,5.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R170 = ethane,0.43700,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R1270 = propylene,2.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R1234yf*,1.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+R1234ze*,1.00000,kg CO₂e/kg,kg,UK Gov GHG Conversion Factors 2025
+,,,,
+,,,,
+,,,,
+,,,,
+Scope 2,,,,
+,,,,
+Purchased Electricity,,,,
+Location,Location-based  Emission Factor,Unit,Activity Unit,Source
+Ireland,0.2263,kg CO₂e/kWh,kWh,SEAI Emission Factors
+UK,0.177,kg CO₂e/kWh,kWh,UK Gov GHG Conversion Factors 2025
+EU (Average),0.207,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+Austria,0.059,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+Belgium,0.15,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+Bulgaria,0.293,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+Croatia,0.139,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+Cyprus,0.575,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+Czechia,0.361,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+Denmark,0.076,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+Estonia,0.538,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+Finland,0.033,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+France,0.048,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+Germany,0.32,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+Greece,0.343,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+Hungary,0.142,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+Italy,0.25,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+Latvia,0.068,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+Lithuania,0.078,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+Luxembourg,0.041,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+Malta,0.341,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+Netherlands,0.256,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+Poland,0.594,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+Portugal,0.115,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+Romania,0.226,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+Slovakia,0.083,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+Slovenia,0.166,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+Spain,0.14,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+Sweden,0.008,kg CO₂e/kWh,kWh,EEA 2023 Emission Factors
+,,,,
+,,,,
+,,,,
+,,,,
+USA grids,,,,
+USA (Average) ,0.348,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+ASCC Alaska Grid,0.4106,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+ASCC Miscellaneous,0.2370,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+WECC Southwest,0.3203,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+WECC California,0.1950,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+ERCOT All,0.3341,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+FRCC All,0.3560,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+HICC Miscellaneous,0.5141,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+HICC Oahu,0.6799,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+MRO East,0.6373,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+MRO West,0.4203,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+NPCC New England,0.2464,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+WECC Northwest,0.2882,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+NPCC NYC/Westchester,0.3927,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+NPCC Long Island,0.5395,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+NPCC Upstate NY,0.1101,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+Puerto Rico Miscellaneous,0.7024,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+RFC East,0.2718,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+RFC Michigan,0.2370,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+RFC West,0.4155,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+WECC Rockies,0.4729,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+SPP North,0.3936,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+SPP South,0.3972,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+SERC Mississippi Valley,0.3364,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+SERC Midwest,0.5663,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+SERC South,0.3837,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+SERC Tennessee Valley,0.4097,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+SERC Virginia/Carolina,0.2705,kg CO₂e/kWh,kWh,US EPA  Emission Factors 2023
+,,,,
+,,,,
+,,,,
+Purchased Heating,,,,
+Fuel,Emission Factor,Unit,Activity Unit,Source
+Electricity,See above,,,as above for electricity sources
+District Heat (Ireland),0.08,kg CO₂e/kwh,Kwh,SEAI (https://www.seai.ie/ber/support-for-ber-assessors/neap/District-Heating-factors-for-BER-calculations.pdf)
+District Heat & Steam  (UK),0.17529,kg CO₂e/kwh,Kwh,UK Gov GHG Conversion Factors 2025
+,,,,
+Purchased Cooling,,,,
+Fuel,Emission Factor,Unit,Activity Unit,Source
+Electricity,See above,,,as above for electricity sources
+,,,,
+Purchased Steam,,,,
+Fuel,Emission Factor,Unit,Activity Unit,Source
+District Heat & Steam  (UK),0.17529,kg CO₂e/kwh,Kwh,UK Gov GHG Conversion Factors 2025

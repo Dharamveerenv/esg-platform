@@ -163,7 +163,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props}>
       <SidebarHeader>
-        <CompanySwitcher companies={data.companies} />
+        <CompanySwitcher />
         <SearchForm />
       </SidebarHeader>
       <SidebarContent>

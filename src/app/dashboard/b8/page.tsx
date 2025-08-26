@@ -1,3 +1,5 @@
+"use client"
+
 import { AppSidebar } from "@/components/app-sidebar"
 import {
   Breadcrumb,
@@ -27,84 +29,131 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Users, TrendingDown, Globe, BarChart3, UserPlus, UserMinus } from "lucide-react"
+import { useDashboard } from "@/contexts/dashboard-context"
+import { apiClient } from "@/lib/api-client"
+import { useCalculations } from "@/hooks/use-calculations"
+import { useState, useEffect } from "react"
 
-export default function B8Page() {
+function B8Content() {
+  const { selectedCompany, selectedReport } = useDashboard();
+  const { calculateWorkforcePreview } = useCalculations();
+  const [workforceData, setWorkforceData] = useState<any>({
+    totalEmployees: 0,
+    permanentEmployees: 0,
+    partTimeEmployees: 0,
+    temporaryEmployees: 0,
+    contractors: 0,
+    genderBalance: { male: 0, female: 0 },
+    turnoverRate: 0
+  });
+  const [isSaving, setIsSaving] = useState(false);
+  
+  // Load workforce data from company
+  useEffect(() => {
+    if (selectedCompany?.workforce) {
+      const workforce = selectedCompany.workforce;
+      setWorkforceData({
+        totalEmployees: workforce.totalEmployees || 0,
+        permanentEmployees: workforce.permanentEmployees || 0,
+        partTimeEmployees: workforce.partTimeEmployees || 0,
+        temporaryEmployees: workforce.temporaryEmployees || 0,
+        contractors: workforce.contractors || 0,
+        genderBalance: workforce.genderDistribution || { male: 0, female: 0 },
+        turnoverRate: workforce.turnoverRate || 0
+      });
+    }
+  }, [selectedCompany]);
+
+  const saveWorkforceData = async () => {
+    if (!selectedReport) return;
+    
+    try {
+      setIsSaving(true);
+      const response = await apiClient.updateModuleData(selectedReport._id, 'b8', {
+        workforceData,
+        lastUpdated: new Date()
+      });
+      
+      if (response.status === 'success') {
+        console.log('✅ B8 workforce data saved successfully');
+      } else {
+        console.error('❌ Failed to save B8 data:', response.message);
+      }
+    } catch (error) {
+      console.error('❌ Error saving B8 data:', error);
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  if (!selectedCompany) {
+    return (
+      <Card>
+        <CardContent className="p-6">
+          <p className="text-muted-foreground">Please select a company to view workforce information</p>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  const totalEmployees = workforceData.totalEmployees || 0;
+  const genderBalance = workforceData.genderBalance || { male: 0, female: 0 };
+  const malePercentage = totalEmployees > 0 ? Math.round((genderBalance.male / totalEmployees) * 100) : 0;
+  const femalePercentage = totalEmployees > 0 ? Math.round((genderBalance.female / totalEmployees) * 100) : 0;
+
   return (
-    <SidebarProvider>
-      <AppSidebar />
-      <SidebarInset>
-        <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
-          <SidebarTrigger className="-ml-1" />
-          <Separator
-            orientation="vertical"
-            className="mr-2 data-[orientation=vertical]:h-4"
-          />
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem className="hidden md:block">
-                <BreadcrumbLink href="/dashboard">
-                  ESG Dashboard
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator className="hidden md:block" />
-              <BreadcrumbItem>
-                <BreadcrumbPage>B8: Workforce General</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
-        </header>
-        <div className="flex flex-1 flex-col gap-6 p-6">
-          {/* Overview Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Total Employees</CardTitle>
-                <Users className="h-4 w-4 text-muted-foreground" />
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">45 FTE</div>
-                <p className="text-xs text-muted-foreground">
-                  Full-time equivalent
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Gender Balance</CardTitle>
-                <BarChart3 className="h-4 w-4 text-muted-foreground" />
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">52% / 48%</div>
-                <p className="text-xs text-muted-foreground">
-                  Female / Male
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Turnover Rate</CardTitle>
-                <TrendingDown className="h-4 w-4 text-green-500" />
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">8.2%</div>
-                <p className="text-xs text-muted-foreground">
-                  Below industry average
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Countries</CardTitle>
-                <Globe className="h-4 w-4 text-muted-foreground" />
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">2</div>
-                <p className="text-xs text-muted-foreground">
-                  Operating locations
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+    <>
+      {/* Overview Cards with Live Data */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Total Employees</CardTitle>
+            <Users className="h-4 w-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">{totalEmployees} FTE</div>
+            <p className="text-xs text-muted-foreground">
+              Full-time equivalent
+            </p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Gender Balance</CardTitle>
+            <BarChart3 className="h-4 w-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">{femalePercentage}% / {malePercentage}%</div>
+            <p className="text-xs text-muted-foreground">
+              Female / Male
+            </p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Turnover Rate</CardTitle>
+            <TrendingDown className="h-4 w-4 text-green-500" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">{workforceData.turnoverRate || 0}%</div>
+            <p className="text-xs text-muted-foreground">
+              Below industry average
+            </p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Countries</CardTitle>
+            <Globe className="h-4 w-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">{selectedCompany.operatingCountries?.length || 1}</div>
+            <p className="text-xs text-muted-foreground">
+              Operating locations
+            </p>
+          </CardContent>
+        </Card>
+      </div>
 
           {/* Workforce Management Tabs */}
           <Card>
@@ -800,15 +849,68 @@ export default function B8Page() {
             </CardContent>
           </Card>
 
-          {/* Action Buttons */}
-          <div className="flex gap-2">
-            <Button>Save Workforce Data</Button>
-            <Button variant="outline">Generate HR Report</Button>
-            <Button variant="outline">Export Demographics</Button>
-            <Button variant="outline">Schedule Review</Button>
-          </div>
+      {/* Action Buttons */}
+      <div className="flex gap-2">
+        <Button onClick={saveWorkforceData} disabled={isSaving}>
+          {isSaving ? 'Saving...' : 'Save Workforce Data'}
+        </Button>
+        <Button 
+          variant="outline"
+          onClick={() => {
+            console.log('📊 Workforce Metrics:', {
+              totalEmployees: workforceData.totalEmployees,
+              genderBalance: workforceData.genderBalance,
+              turnoverRate: workforceData.turnoverRate
+            });
+          }}
+        >
+          Generate HR Report
+        </Button>
+        <Button 
+          variant="outline"
+          onClick={() => {
+            const demographicsData = JSON.stringify(workforceData, null, 2);
+            navigator.clipboard.writeText(demographicsData);
+            console.log('📋 Demographics data copied to clipboard');
+          }}
+        >
+          Export Demographics
+        </Button>
+        <Button variant="outline">Schedule Review</Button>
+      </div>
+    </>
+  );
+}
+
+export default function B8Page() {
+  return (
+    <SidebarProvider>
+      <AppSidebar />
+      <SidebarInset>
+        <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
+          <SidebarTrigger className="-ml-1" />
+          <Separator
+            orientation="vertical"
+            className="mr-2 data-[orientation=vertical]:h-4"
+          />
+          <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem className="hidden md:block">
+                <BreadcrumbLink href="/dashboard">
+                  ESG Dashboard
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator className="hidden md:block" />
+              <BreadcrumbItem>
+                <BreadcrumbPage>B8: Workforce General</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+        </header>
+        <div className="flex flex-1 flex-col gap-6 p-6">
+          <B8Content />
         </div>
       </SidebarInset>
     </SidebarProvider>
-  )
+  );
 }

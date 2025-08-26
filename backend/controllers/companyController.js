@@ -11,10 +11,8 @@ const catchAsync = require('../utils/catchAsync');
  * Get all companies accessible to the user
  */
 const getAllCompanies = catchAsync(async (req, res, next) => {
-  // Get companies based on user's company associations
-  const companyIds = req.user.companyAssociations.map(assoc => assoc.companyId);
-  
-  const companies = await Company.find({ _id: { $in: companyIds } })
+  // Development mode: Return all companies (authentication disabled)
+  const companies = await Company.find({})
     .select('companyProfile industryClassification headquarters');
   
   res.status(200).json({
@@ -50,8 +48,8 @@ const getCompany = catchAsync(async (req, res, next) => {
 const createCompany = catchAsync(async (req, res, next) => {
   const company = await Company.create(req.body);
   
-  // Add creator as Admin of the company
-  await req.user.addCompanyAssociation(company._id, 'Admin', req.user._id);
+  // Development mode: Skip user association (authentication disabled)
+  // await req.user.addCompanyAssociation(company._id, 'Admin', req.user._id);
   
   res.status(201).json({
     status: 'success',
