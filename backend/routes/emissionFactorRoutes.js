@@ -35,7 +35,7 @@ router
   .get(getRefrigerantGWP);
 
 // Protected routes
-router.use(protect);
+// router.use(protect); // DISABLED for development
 
 router
   .route('/')

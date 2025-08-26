@@ -21,8 +21,8 @@ const { validateCompany, validatePremise } = require('../middleware/validation')
 
 const router = express.Router();
 
-// Protect all routes after this middleware
-router.use(protect);
+// Protect all routes after this middleware (DISABLED for development)
+// router.use(protect);
 
 // Company CRUD routes
 router

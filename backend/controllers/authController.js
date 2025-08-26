@@ -11,6 +11,7 @@ const User = require('../models/User');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 const Email = require('../utils/email');
+const ResponseFormatter = require('../utils/responseFormatter');
 
 // Generate JWT token
 const signToken = (id) => {
@@ -27,7 +28,7 @@ const signRefreshToken = (id) => {
 };
 
 // Create and send JWT tokens
-const createSendToken = (user, statusCode, res) => {
+const createSendToken = (user, statusCode, res, message = null) => {
   const token = signToken(user._id);
   const refreshToken = signRefreshToken(user._id);
   
@@ -49,14 +50,13 @@ const createSendToken = (user, statusCode, res) => {
   // Remove password from output
   user.passwordHash = undefined;
 
-  res.status(statusCode).json({
-    status: 'success',
+  const responseData = {
+    user,
     token,
-    refreshToken,
-    data: {
-      user
-    }
-  });
+    refreshToken
+  };
+
+  return ResponseFormatter.success(res, responseData, message, statusCode);
 };
 
 // User registration
@@ -100,7 +100,7 @@ exports.signup = catchAsync(async (req, res, next) => {
     // Don't fail registration if email fails
   }
 
-  createSendToken(newUser, 201, res);
+  createSendToken(newUser, 201, res, 'User registered successfully');
 });
 
 // User login
@@ -155,11 +155,11 @@ exports.login = catchAsync(async (req, res, next) => {
   // Check MFA if enabled
   if (user.security.mfaEnabled) {
     if (!mfaToken) {
-      return res.status(200).json({
-        status: 'mfa_required',
-        message: 'Multi-factor authentication required',
-        mfaEnabled: true
-      });
+      return ResponseFormatter.success(res, 
+        { mfaEnabled: true, requiresMfa: true }, 
+        'Multi-factor authentication required',
+        200
+      );
     }
 
     const verified = speakeasy.totp.verify({
@@ -181,7 +181,7 @@ exports.login = catchAsync(async (req, res, next) => {
   user.lastLogin = new Date();
   await user.save({ validateBeforeSave: false });
 
-  createSendToken(user, 200, res);
+  createSendToken(user, 200, res, 'Login successful');
 });
 
 // User logout
@@ -195,7 +195,7 @@ exports.logout = (req, res) => {
     httpOnly: true
   });
   
-  res.status(200).json({ status: 'success' });
+  return ResponseFormatter.success(res, null, 'Logged out successfully');
 };
 
 // Protect middleware
@@ -303,10 +303,7 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
 
     await new Email(user, resetURL).sendPasswordReset();
 
-    res.status(200).json({
-      status: 'success',
-      message: 'Password reset token sent to email!'
-    });
+    return ResponseFormatter.success(res, null, 'Password reset token sent to email!');
   } catch (err) {
     user.security.passwordResetToken = undefined;
     user.security.passwordResetExpires = undefined;
@@ -341,7 +338,7 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
   await user.save();
 
   // Log the user in, send JWT
-  createSendToken(user, 200, res);
+  createSendToken(user, 200, res, 'Password reset successful');
 });
 
 // Update password
@@ -360,7 +357,7 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
   await user.save();
 
   // Log user in, send JWT
-  createSendToken(user, 200, res);
+  createSendToken(user, 200, res, 'Password updated successfully');
 });
 
 // Setup MFA
@@ -390,14 +387,13 @@ exports.setupMFA = catchAsync(async (req, res, next) => {
   user.security.mfaBackupCodes = backupCodes;
   await user.save({ validateBeforeSave: false });
 
-  res.status(200).json({
-    status: 'success',
-    data: {
-      secret: secret.base32,
-      qrCodeUrl: secret.otpauth_url,
-      backupCodes: backupCodes.map(bc => bc.code)
-    }
-  });
+  const mfaData = {
+    secret: secret.base32,
+    qrCodeUrl: secret.otpauth_url,
+    backupCodes: backupCodes.map(bc => bc.code)
+  };
+
+  return ResponseFormatter.success(res, mfaData, 'MFA setup initiated. Please scan QR code with authenticator app.');
 });
 
 // Enable MFA
